@@ -53,6 +53,9 @@ export default class Application {
             this.IFRAMEURL = Constants.IFRAMEURL_PRD;
         }
 
+        //Check if local storage values expired
+        this.ApplicationStorage._processLocalStorageExpires();
+
         //Div container for SDK
         let chatEl = document.createElement('div');
         //Div ID
@@ -97,7 +100,7 @@ export default class Application {
                 userEmail: opts.config.user.email,
                 authType: opts.config.authType
             }
-            this.ApplicationStorage._setToLocalStorage(Constants.USER_ACCOUNT_KEY, btoa(JSON.stringify(userAccount)), Constants.COOKIES_EXPIRATION)
+            this.ApplicationStorage._setToLocalStorage(Constants.USER_ACCOUNT_KEY, userAccount, Constants.COOKIES_EXPIRATION)
         }
 
         //Chat iframe
@@ -295,7 +298,8 @@ export default class Application {
                 break;
 
             case Constants.COOKIE_DATA_CODE:
-                this.ApplicationStorage._setToLocalStorage(Constants.USER_ACCOUNT_KEY, event.data.userAccount);
+                const userAccount = JSON.parse(atob(event.data.userAccount))
+                this.ApplicationStorage._setToLocalStorage(Constants.USER_ACCOUNT_KEY, userAccount,  Constants.COOKIES_EXPIRATION);
                 break;
 
             case Constants.ACTION_SHOW_IMAGE_CODE:
