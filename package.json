@@ -1,6 +1,6 @@
 {
-  "name": "blip-chat-web",
-  "version": "1.0.3",
+  "name": "ps-chat",
+  "version": "1.0.0",
   "description": "BLiP Chat for web",
   "main": "sdk/dist/blipWebSdk.js",
   "files": [
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/takenet/blip-chat-web.git"
+    "url": "git+https://github.com/takenet/ps-chat.git"
   },
   "author": "Take.net",
   "license": "ISC",
