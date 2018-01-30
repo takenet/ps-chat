@@ -1,7 +1,7 @@
 export default class Constants {
     static get USER_ACCOUNT_KEY() { return btoa('blipSdkUAccount'); }
     static get IFRAMEURL_LOCAL() { return 'http://localhost:8082/'; }
-    static get IFRAMEURL_HMG() { return 'https://hmg-chat.blip.ai/'; }
+    static get IFRAMEURL_HMG() { return 'https://afba0d90.ngrok.io/'; }
     static get IFRAMEURL_PRD() { return 'https://chat.blip.ai/'; }
     static get SDK_DEFAULT_TITLE() { return 'Estamos online'; }
     static get SDK_DEFAULT_ICON_PATH() { return 'https://takenetomni.blob.core.windows.net/media-db/blip-app-white.png'; }
@@ -9,7 +9,7 @@ export default class Constants {
     static get SDK_DEFAULT_Z_INDEX() { return 16000001; }
     static get SDK_DEFAULT_HIDE_MENU() { return false; }
     static get SDK_DEFAULT_SHOW_NOTIFICATION() { return true; }
-    static get COOKIES_EXPIRATION() { return 8,64e+7; } //Time to expire in miliseconds (1 day)
+    static get COOKIES_EXPIRATION() { return 8.64e+7; } //Time to expire in miliseconds (1 day)
     static get SEND_MESSAGE_CODE() { return 'SendMessage'; }
     static get REQUEST_POST_MESSAGE_CODE() { return 'RequestCookie'; }
     static get START_CONNECTION_CODE() { return 'BlipSdkStartConnection'; }
