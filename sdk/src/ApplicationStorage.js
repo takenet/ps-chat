@@ -10,7 +10,6 @@ class ApplicationStorage {
     _setToLocalStorage(name, value, expires) {
         if (this._supportsLocalStorage()) {
             value.expires = new Date().getTime() + expires;
-            console.log('Expires', value.expires, expires)
             localStorage.setItem(name, btoa(JSON.stringify(value)));
         }
     }
