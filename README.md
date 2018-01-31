@@ -7,13 +7,13 @@ SDK to easily add BLiP Chat widget in your Web page. Put your chatbot in your we
 Installation
 --------
 
-Add the script element inside the **body** of your web page. Put your apikey as asked. To get your apikey go to [BLiP portal][3]. On the left menu access *Publications -> Blip Chat*. You will also need to add domains from the websites where Blip Chat is inclued, in order to enabled them in your chatbot. 
+Add the script element inside the **body** of your web page. Put your apikey as asked. To get your apikey go to [BLiP portal][3]. On the left menu access *Publications -> Blip Chat*. You will also need to add domains from the websites where Blip Chat is inclued, in order to enabled them in your chatbot.
 That's all :)
 
 *For **publishing** purpose, prefer download the script and reference it locally. CDN can have availability problem and cause blip chat instability.*
 
 ```html
-<script src="https://unpkg.com/blip-chat-web@1.0.3" type="text/javascript"></script>
+<script src="https://unpkg.com/ps-chat@1.0.2" type="text/javascript"></script>
 <script>
    (function () {
       window.onload = function () {
@@ -28,14 +28,14 @@ That's all :)
 Via npm
 --------
 
-If you are using ES6, simply install the `blip-chat-web` package from the npm registry.
+If you are using ES6, simply install the `ps-chat` package from the npm registry.
 
-`npm install blip-chat-web`
+`npm install ps-chat`
 
 ### Instantiate the BlipSdkWeb class
 
 ```javascript
-import * as BlipWebSDK from 'blip-chat-web';
+import * as BlipWebSDK from 'ps-chat';
 
 new BlipWebSDK.ChatBuilder()
   .withApiKey('PUT-YOUR-API-KEY-HERE')
@@ -45,10 +45,10 @@ new BlipWebSDK.ChatBuilder()
 Via bower
 --------
 
-`bower install blip-chat-web`
+`bower install ps-chat`
 
 ```html
-<script src="your-project/bower_components/blip-chat-web/dist/blipWebSdk.js" type="text/javascript"></script>
+<script src="your-project/bower_components/ps-chat/dist/blipWebSdk.js" type="text/javascript"></script>
 <script>
   (function () {
     new BlipWebSDK.ChatBuilder()
@@ -69,7 +69,7 @@ A application that use dojo.js as your AMD
 
 ```html
 <script src="//ajax.googleapis.com/ajax/libs/dojo/1.12.1/dojo/dojo.js"></script>
-<script type="text/javascript" src="https://unpkg.com/blip-chat-web@1.0.3"></script>
+<script type="text/javascript" src="https://unpkg.com/ps-chat@1.0.2"></script>
 
 <script>
     require(['BlipWebSDK'], function (sdk) {
@@ -85,7 +85,7 @@ Optional parameters
 
 You can also define optional parameters passing an object inside *build()* method, as you can see below:
 
-Options object contains three properties: 
+Options object contains three properties:
 
 ### Config
 
@@ -95,9 +95,9 @@ Options object contains three properties:
 | `user` | User data with `id`, `password`, `name` and `email` properties |
 | `showNotification` | Enable notification for new messages when tab is not active ** |
 
-&#8727; Possible values for authType are: 'Guest', 'Login' and 'Dev'. You can access them using 'BlipWebSDK.AuthType' class. 'Guest' type will be used as default If you do not define 'authType'. To see more details about authentication types [click here](https://github.com/takenet/blip-chat-web/wiki/Authentication-Types)
+&#8727; Possible values for authType are: 'Guest', 'Login' and 'Dev'. You can access them using 'BlipWebSDK.AuthType' class. 'Guest' type will be used as default If you do not define 'authType'. To see more details about authentication types [click here](https://github.com/takenet/ps-chat/wiki/Authentication-Types)
 
-&#8727;&#8727; The notifications are active by default. 
+&#8727;&#8727; The notifications are active by default.
 
 ### Window
 
@@ -123,10 +123,10 @@ Examples
 ### BLiP Chat as a widget
 
 ```javascript
-var options = 
+var options =
 {
     window: {
-        title: 'Send a message',        
+        title: 'Send a message',
         widgetColor: '#546E7A',
         iconPath: 'https://takenetomni.blob.core.windows.net/media-db/blip-app-white.png',
         hideMenu: false
@@ -146,10 +146,10 @@ new BlipWebSDK.ChatBuilder()
   .build(options);
 ```
 
-### BLiP Chat as embedded element using 'Login' authentication type and disabling notifications: 
+### BLiP Chat as embedded element using 'Login' authentication type and disabling notifications:
 
 ```javascript
-var options = 
+var options =
 {
     config: {
         authType: BlipWebSDK.AuthType.LOGIN,
@@ -184,10 +184,10 @@ To destroy BLiP Chat widget you must use a **destroy** method on chat builder va
 ### Example
 
 ```javascript
-var options = 
+var options =
 {
     window: {
-        title: 'Send a message'                              
+        title: 'Send a message'
     },
     events: {
         onEnter: function() {
@@ -202,7 +202,7 @@ var options =
 var chatBuilder = new BlipWebSDK.ChatBuilder()
   .withApiKey('PUT-YOUR-API-KEY-HERE');
 chatBuilder.build(options);
-  
+
 //To destroy widget use:
 chatBuilder.destroy();
 
@@ -218,7 +218,7 @@ chatBuilder = new BlipWebSDK.ChatBuilder()
 * **Google Chrome:**  Version 40 or later
 * **Firefox:** Version 48 or later
 * **Opera:** Version 35 or later
-* **Microsoft EDGE:** Version 14 or later 
+* **Microsoft EDGE:** Version 14 or later
 * **Internet Explorer:** Version 11. _Not recommended_ &#8727;
 
 &#8727; _It is not recommended to use Internet Explorer due to some restrictions as carousel card not supported and card layout problems._

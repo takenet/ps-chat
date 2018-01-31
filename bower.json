@@ -1,5 +1,5 @@
 {
-  "name": "blip-chat-web",
+  "name": "ps-chat",
   "description": "BLiP Chat for web",
   "main": "sdk/dist/blipWebSdk.js",
   "authors": [
@@ -12,7 +12,7 @@
     "chat",
     "blip"
   ],
-  "homepage": "https://github.com/takenet/blip-chat-web",
+  "homepage": "https://github.com/takenet/ps-chat",
   "ignore": [
     "**/.*",
     "node_modules",
