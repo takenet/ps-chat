@@ -9,8 +9,7 @@ export default class Constants {
     static get SDK_DEFAULT_Z_INDEX() { return 16000001; }
     static get SDK_DEFAULT_HIDE_MENU() { return false; }
     static get SDK_DEFAULT_SHOW_NOTIFICATION() { return true; }
-    // static get COOKIES_EXPIRATION() { return 8.64e+7; } //Time to expire in miliseconds (1 day)
-    static get COOKIES_EXPIRATION() { return 300000; } //Time to expire in miliseconds (1 day)
+    static get COOKIES_EXPIRATION() { return 8.64e+7; } //Time to expire in miliseconds (1 day)
     static get SEND_MESSAGE_CODE() { return 'SendMessage'; }
     static get REQUEST_POST_MESSAGE_CODE() { return 'RequestCookie'; }
     static get START_CONNECTION_CODE() { return 'BlipSdkStartConnection'; }
