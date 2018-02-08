@@ -86,7 +86,7 @@ export default class Application {
 
     /* Build chat HTML element */
     buildChat(opts) {
-        let params = `appKey=${this._appKey}&authType=${opts.config.authType}`;
+        let params = `appKey=${encodeURIComponent(this._appKey)}&authType=${opts.config.authType}`;
 
         if (opts.config.authType === AuthType.DEV) {
             if (!opts.config.user || !opts.config.user.id || !opts.config.user.password) {
