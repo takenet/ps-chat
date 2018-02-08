@@ -1,6 +1,6 @@
 {
   "name": "ps-chat",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "BLiP Chat for web",
   "main": "sdk/dist/blipWebSdk.js",
   "files": [
