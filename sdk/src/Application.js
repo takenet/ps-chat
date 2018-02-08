@@ -86,7 +86,7 @@ export default class Application {
 
     /* Build chat HTML element */
     buildChat(opts) {
-        let params = `bot=${this._apiKey}&authType=${opts.config.authType}`;
+        let params = `appKey=${this._appKey}&authType=${opts.config.authType}`;
 
         if (opts.config.authType === AuthType.DEV) {
             if (!opts.config.user || !opts.config.user.id || !opts.config.user.password) {
@@ -94,7 +94,7 @@ export default class Application {
                 return;
             }
             var userAccount = {
-                userIdentity: this._apiKey + '_' + opts.config.user.id,
+                userIdentity: this._appKey + '_' + opts.config.user.id,
                 userPassword: btoa(opts.config.user.password),
                 userName: opts.config.user.name ? encodeURIComponent(opts.config.user.name) : opts.config.user.name,
                 userEmail: opts.config.user.email,

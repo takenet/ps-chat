@@ -5,8 +5,8 @@ export default class ChatBuilder {
     this._application = new Application();
   }
 
-  withBotIdentifier(identifier) {
-    this._application._apiKey = identifier;
+  withAppKey(appKey) {
+    this._application._appKey = appKey;
     return this;
   }
 

@@ -80,7 +80,7 @@
     (function () {
         window.onload = function () {
 
-            var apiKey = "YOUR_BOT_IDENTIFIER";
+            var apiKey = "YmxpcHRlc3RjYXJkczoxOGE5NzUwYS1kZjAxLTRhNTgtODA1ZC1kY2ExYmI2NTBmZjk=";
 
             var options = {
                 config: {
@@ -119,7 +119,7 @@
                 };
 
                 blipsdk = new BlipWebSDK.ChatBuilder()
-                .withBotIdentifier(apiKey)
+                .withAppKey(apiKey)
                 blipsdk.build(options);
             }
 
