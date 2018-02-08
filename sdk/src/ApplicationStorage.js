@@ -14,6 +14,12 @@ class ApplicationStorage {
         }
     }
 
+    _clearLocalStorage(name, value, expires) {
+        if (this._supportsLocalStorage()) {
+            localStorage.clear();
+        }
+    }
+
     _supportsLocalStorage() {
         try {
             return "localStorage" in window && window["localStorage"] !== null;

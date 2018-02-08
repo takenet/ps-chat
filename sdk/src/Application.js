@@ -320,11 +320,16 @@ export default class Application {
         let account = this.ApplicationStorage._getFromLocalStorage(Constants.USER_ACCOUNT_KEY);
         console.log('sdk web account', account);
 
+        if(account && JSON.parse(atob(account)).authType == AuthType.DEV){
+            this.ApplicationStorage._clearLocalStorage();
+        }
+
         let message =
             {
                 code: Constants.START_CONNECTION_CODE,
                 userAccount: account,
             };
+
         iframe.contentWindow.postMessage(message, this.IFRAMEURL);
 
         this.connectionStarted = true;
