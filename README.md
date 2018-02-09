@@ -13,12 +13,12 @@ That's all :)
 *For **publishing** purpose, prefer download the script and reference it locally. CDN can have availability problem and cause blip chat instability.*
 
 ```html
-<script src="https://unpkg.com/ps-chat@1.0.2" type="text/javascript"></script>
+<script src="https://unpkg.com/ps-chat@1.0.3" type="text/javascript"></script>
 <script>
    (function () {
       window.onload = function () {
           new BlipWebSDK.ChatBuilder()
-            .withApiKey('PUT-YOUR-API-KEY-HERE')
+            .withAppKey('PUT-YOUR-APP-KEY-HERE')
             .build();
           }
         })();

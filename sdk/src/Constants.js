@@ -13,7 +13,7 @@ export default class Constants {
     static get SEND_MESSAGE_CODE() { return 'SendMessage'; }
     static get REQUEST_POST_MESSAGE_CODE() { return 'RequestCookie'; }
     static get START_CONNECTION_CODE() { return 'BlipSdkStartConnection'; }
-    static get COOKIE_DATA_CODE() { return 'BlipSdkCookieData'; }
+    static get COOKIE_DATA_CODE() { return 'CreateAccount'; }
     static get MENU_VISIBILITY_CODE() { return 'BlipSdkMenuVisibility'; }
     static get SHOW_NOTIFICATION_CODE() { return 'BlipSdkShowNotification'; }
     static get ACTION_SHOW_IMAGE_CODE() { return 'BlipSdkActionShowImage'; }

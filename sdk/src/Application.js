@@ -86,7 +86,7 @@ export default class Application {
 
     /* Build chat HTML element */
     buildChat(opts) {
-        let params = `appKey=${this._appKey}&authType=${opts.config.authType}`;
+        let params = `appKey=${encodeURIComponent(this._appKey)}&authType=${opts.config.authType}`;
 
         if (opts.config.authType === AuthType.DEV) {
             if (!opts.config.user || !opts.config.user.id || !opts.config.user.password) {
@@ -320,11 +320,16 @@ export default class Application {
         let account = this.ApplicationStorage._getFromLocalStorage(Constants.USER_ACCOUNT_KEY);
         console.log('sdk web account', account);
 
+        if(account && JSON.parse(atob(account)).authType == AuthType.DEV){
+            this.ApplicationStorage._clearLocalStorage();
+        }
+
         let message =
             {
                 code: Constants.START_CONNECTION_CODE,
                 userAccount: account,
             };
+
         iframe.contentWindow.postMessage(message, this.IFRAMEURL);
 
         this.connectionStarted = true;
