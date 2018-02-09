@@ -23,25 +23,32 @@ class ApplicationStorage {
     }
 
     _processLocalStorageExpires() {
-        var toRemove = []; //Items to be removed
-        const currentDate = new Date().getTime();
+        try {
 
-        for (var i = 0, j = localStorage.length; i < j; i++) {
-            var currentValue = localStorage.getItem(localStorage.key(i));
+            var toRemove = []; //Items to be removed
+            const currentDate = new Date().getTime();
 
-            //Decode back to JSON
-            currentValue = JSON.parse(atob(currentValue));
+            for (var i = 0, j = localStorage.length; i < j; i++) {
+                try {
+                    var currentValue = localStorage.getItem(localStorage.key(i));
 
-            //Check if item expired
-            if (currentValue.expires && currentValue.expires <= currentDate) {
-                toRemove.push(localStorage.key(i));
+                    //Decode back to JSON
+                    currentValue = JSON.parse(atob(currentValue));
+
+                    //Check if item expired
+                    if (currentValue.expires && currentValue.expires <= currentDate) {
+                        toRemove.push(localStorage.key(i));
+                    }
+                }
+                catch (e) {}
+            }
+
+            // Remove outdated items
+            for (var i = toRemove.length - 1; i >= 0; i--) {
+                localStorage.removeItem(toRemove[i]);
             }
         }
-
-        // Remove outdated items
-        for (var i = toRemove.length - 1; i >= 0; i--) {
-            localStorage.removeItem(toRemove[i]);
-        }
+        catch (e) {console.log(e)}
     }
 }
 
