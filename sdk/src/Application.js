@@ -93,8 +93,9 @@ export default class Application {
                 console.error('User id and passoword must be defined when on DEV auth type');
                 return;
             }
+            const [identifier] = window.atob(this._appKey).split(':')
             var userAccount = {
-                userIdentity: this._appKey + '_' + opts.config.user.id,
+                userIdentity: `${opts.config.user.id}.${identifier}`,
                 userPassword: btoa(opts.config.user.password),
                 userName: opts.config.user.name ? encodeURIComponent(opts.config.user.name) : opts.config.user.name,
                 userEmail: opts.config.user.email,
